@@ -52,6 +52,7 @@
             this.textBoxTenDangNhap.Name = "textBoxTenDangNhap";
             this.textBoxTenDangNhap.Size = new System.Drawing.Size(359, 20);
             this.textBoxTenDangNhap.TabIndex = 0;
+            this.textBoxTenDangNhap.Text = "nam";
             // 
             // label2
             // 
@@ -68,6 +69,7 @@
             this.textBoxMatKhau.Name = "textBoxMatKhau";
             this.textBoxMatKhau.Size = new System.Drawing.Size(359, 20);
             this.textBoxMatKhau.TabIndex = 1;
+            this.textBoxMatKhau.Text = "123";
             this.textBoxMatKhau.UseSystemPasswordChar = true;
             // 
             // btnDangNhap

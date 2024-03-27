@@ -17,7 +17,7 @@ namespace QuanLyBanHang1
         {
             InitializeComponent();
         }
-
+        #region event
         private void fDangNhap_Load(object sender, EventArgs e)
         {
 
@@ -47,11 +47,20 @@ namespace QuanLyBanHang1
 
 
         private void btlDangNhapAdmin_Click(object sender, EventArgs e)
-        {
-            fDangNhapLaAdmin f = new fDangNhapLaAdmin();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
+        { 
+            string taiKhoan = textBoxTenDangNhap.Text;
+            string matKhau = textBoxMatKhau.Text;
+            if (loginAdmin(taiKhoan, matKhau))
+            {
+                fDangNhapLaAdmin f = new fDangNhapLaAdmin();
+                this.Hide();
+                f.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Sai tên tài khoản hoặc mật khẩu");
+            }
         }
 
         private void btnDangKi_Click(object sender, EventArgs e)
@@ -59,10 +68,22 @@ namespace QuanLyBanHang1
 
         }
 
+        #endregion
+
+
+
+        #region method
         public bool login(string taiKhoan, string matKhau)
         {
 
-            return TaiKhoanDAO.Instance.login(taiKhoan, matKhau);
+            return TaiKhoanDAO.Instance.Login(taiKhoan, matKhau);
         }
+
+        public bool loginAdmin(string taiKhoan, string matKhau)
+        {
+
+            return TaiKhoanDAO.Instance.LoginAdmin(taiKhoan, matKhau);
+        }
+        #endregion
     }
 }
